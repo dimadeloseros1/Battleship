@@ -1,0 +1,14 @@
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.UI\bin\Debug\net7.0\Battleship.UI.exe
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.UI\bin\Debug\net7.0\Battleship.UI.deps.json
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.UI\bin\Debug\net7.0\Battleship.UI.runtimeconfig.json
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.UI\bin\Debug\net7.0\Battleship.UI.dll
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.UI\bin\Debug\net7.0\Battleship.UI.pdb
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.UI\obj\Debug\net7.0\Battleship.UI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.UI\obj\Debug\net7.0\Battleship.UI.AssemblyInfoInputs.cache
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.UI\obj\Debug\net7.0\Battleship.UI.AssemblyInfo.cs
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.UI\obj\Debug\net7.0\Battleship.UI.csproj.CoreCompileInputs.cache
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.UI\obj\Debug\net7.0\Battleship.UI.dll
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.UI\obj\Debug\net7.0\refint\Battleship.UI.dll
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.UI\obj\Debug\net7.0\Battleship.UI.pdb
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.UI\obj\Debug\net7.0\Battleship.UI.genruntimeconfig.cache
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.UI\obj\Debug\net7.0\ref\Battleship.UI.dll

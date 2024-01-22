@@ -1,0 +1,5 @@
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.Tests\obj\Debug\net7.0\Battleship.Tests.csproj.AssemblyReference.cache
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.Tests\obj\Debug\net7.0\Battleship.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.Tests\obj\Debug\net7.0\Battleship.Tests.AssemblyInfoInputs.cache
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.Tests\obj\Debug\net7.0\Battleship.Tests.AssemblyInfo.cs
+C:\Users\dimad\OneDrive\Desktop\C#\200-series\inheritance\Battleship\Battleship.Tests\obj\Debug\net7.0\Battleship.Tests.csproj.CoreCompileInputs.cache
