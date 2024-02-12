@@ -8,7 +8,8 @@ namespace Battleship.UI.Interface
 {
     public interface IPlayer
     {
-        bool IsHuman { get; set; }
-        int ShipPlacementChoice();
+        int MaxNum { get; set; }
+        bool IsHuman { get; }
+        string ChooseCoordinate();
     }
 }

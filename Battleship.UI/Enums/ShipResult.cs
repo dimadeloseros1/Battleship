@@ -12,6 +12,16 @@ namespace Battleship.UI.Enums
         Battleship,
         Cruiser,
         Submarine,
-        Destroyer
+        Destroyer 
+    }
+
+    public enum ShipResult
+    {
+        Hit,
+        Miss,
+        Sunk,
+        Placed,
+        InvalidOffGrid,
+        InvalidOverlap
     }
 }

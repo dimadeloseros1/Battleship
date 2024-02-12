@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Battleship.UI.Enums;
+using Battleship.UI.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,19 +14,62 @@ namespace Battleship.UI.Actions
     /// </summary>
     public class Ship
     {
-        public string ShipPlacement(string letter, int cordinate)
-        {
-            int numArr = 10;
-            string[] letterArr = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
+        public string[] ShipArray { get; set; } = new string[17];
+       
+        public int Size { get; set; }
+        
 
-            for (int i = 1; i <= numArr; i++)
+
+        /// <summary>
+        /// This method displays the current ship that the user has to input in the game board
+        /// </summary>
+        /// <param name="shipName">Enum of the current ship</param>
+        public void DisplayShipInputMessage(ShipName shipName)
+        {
+            switch (shipName)
             {
-                for (int k = 0; k < letterArr.Length; k++)
-                {
-                    int.Parse(letter);
-                }
+                case ShipName.AircraftCarrier:
+                    Console.WriteLine("Ship to place: Aircraft Carrier | Size: 5");
+                    Size = 5;
+                    break;
+                case ShipName.Battleship:
+                    Console.WriteLine("Ship to place: Battleship | Size: 4");
+                    Size = 4;
+                    break;
+                case ShipName.Cruiser:
+                    Console.WriteLine("Ship to place: Crsuier | Size: 3");
+                    Size = 3;
+                    break;
+                case ShipName.Submarine:
+                    Console.WriteLine("Ship to place: Submarine | Size: 3");
+                    Size = 3;
+                    break;
+                case ShipName.Destroyer:
+                    Console.WriteLine("Ship to place: Destroyer | Size: 2");
+                    Size = 2;
+                    break;
             }
-            return letter + cordinate;
         }
+
+        
+
+
+        public string ChooseVerticalOrHorizontal(string message, ShipName shipName)
+        {
+            do
+            {
+            string input = ConsoleIO.GetRequiredCoordinate(message);
+                if (input == "H")
+                {
+                    for (int i = 0; i <= (int)shipName; i++)
+                    {
+
+                    }
+                }
+                
+            } while (true);
+        }
+        
     }
+    
 }

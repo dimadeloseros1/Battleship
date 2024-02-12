@@ -5,22 +5,21 @@ using NUnit.Framework.Legacy;
 
 namespace Battleship.Tests
 {
+        
     [TestFixture]
     public class GamTests
     {
-        public Ship ShipManager()
+        public GameGridTests GridManager()
         {
-            return new Ship();
+            return new GameGridTests();
         }
-
-
         [Test]
-        public void ShipCordinate()
+        public void AddingItemToTheGrid()
         {
-            var manager = ShipManager();
-            var result = manager.ShipPlacement("A", 3);
+            var manager = new GameGridTests();
+            var result = manager.DisplayGrid("H3");
 
-            ClassicAssert.IsNotNull(result);
+            Assert.That(result, Is.EqualTo(manager.Grid[7, 2]));
         }
     }
 }
