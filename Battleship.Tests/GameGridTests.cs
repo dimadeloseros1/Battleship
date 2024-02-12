@@ -14,9 +14,10 @@ namespace Battleship.Tests
 
         public string DisplayGrid(string userInput)
         {
+            
             int columnIndex = Array.IndexOf(Letters, userInput[0].ToString());
-            int rowIndex = int.Parse(userInput.Substring(1)); // Subtract 1 because array indices start from 0
-
+            int rowIndex = int.Parse(userInput.Substring(1));
+            int fairNum = 1;
             // Assign the userInput to the corresponding cell in the grid
             for (int i = 0; i < Coordinates; i++)
             {
