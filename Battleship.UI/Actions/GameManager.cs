@@ -14,9 +14,12 @@ namespace Battleship.UI.Actions
         public void Run()
         {
             Coordinates coordinate = new Coordinates();
-            string input = ConsoleIO.GetRequiredCoordinate("Get your coodrinate: ");
-            coordinate.DisplayCoordinates(input);
-           
+            string input = ConsoleIO.GetRequiredCoordinate("Enter the starting coordinate (ex: A5): ");
+            string inputs = coordinate.DisplayCoordinates(input);
+
+            coordinate.CheckHorizontalOrVertical(ShipName.AircraftCarrier, inputs);
+            coordinate.DisplayGrid();
+            
         }
     }
 

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Battleship.UI.DTOs
 {
-    public class PlayerData
+    public  class PlayerData
     {
         public string UserName { get; set; }
+        public string ShipSymbol { get; set; }
     }
 }

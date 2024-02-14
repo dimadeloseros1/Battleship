@@ -1,4 +1,5 @@
-﻿using Battleship.UI.Enums;
+﻿using Battleship.UI.DTOs;
+using Battleship.UI.Enums;
 using Battleship.UI.Interface;
 using System;
 using System.Collections.Generic;
@@ -14,62 +15,79 @@ namespace Battleship.UI.Actions
     /// </summary>
     public class Ship
     {
+        PlayerData data = new PlayerData();
         public string[] ShipArray { get; set; } = new string[17];
-       
+
         public int Size { get; set; }
-        
+
 
 
         /// <summary>
         /// This method displays the current ship that the user has to input in the game board
         /// </summary>
         /// <param name="shipName">Enum of the current ship</param>
-        public void DisplayShipInputMessage(ShipName shipName)
+        public int DisplayShipInputMessage(ShipName shipName)
         {
+            int size;
             switch (shipName)
             {
                 case ShipName.AircraftCarrier:
                     Console.WriteLine("Ship to place: Aircraft Carrier | Size: 5");
-                    Size = 5;
+                    size = 5;
+                    data.ShipSymbol = "A";
                     break;
                 case ShipName.Battleship:
                     Console.WriteLine("Ship to place: Battleship | Size: 4");
-                    Size = 4;
+                    size = 4;
+                    data.ShipSymbol = "B";
                     break;
                 case ShipName.Cruiser:
-                    Console.WriteLine("Ship to place: Crsuier | Size: 3");
-                    Size = 3;
+                    Console.WriteLine("Ship to place: Cruiser | Size: 3");
+                    size = 3;
+                    data.ShipSymbol = "C";
                     break;
                 case ShipName.Submarine:
                     Console.WriteLine("Ship to place: Submarine | Size: 3");
-                    Size = 3;
+                    size = 3;
+                    data.ShipSymbol = "S";
                     break;
                 case ShipName.Destroyer:
                     Console.WriteLine("Ship to place: Destroyer | Size: 2");
-                    Size = 2;
+                    size = 2;
+                    data.ShipSymbol = "D";
+                    break;
+                default:
+                    size = 0;
                     break;
             }
+            return size;
         }
 
-        
 
 
-        public string ChooseVerticalOrHorizontal(string message, ShipName shipName)
-        {
-            do
-            {
-            string input = ConsoleIO.GetRequiredCoordinate(message);
-                if (input == "H")
-                {
-                    for (int i = 0; i <= (int)shipName; i++)
-                    {
 
-                    }
-                }
-                
-            } while (true);
-        }
-        
+        //public string ChooseVerticalOrHorizontal(string message, ShipName shipName, string[] shipGrid)
+        //{
+        //    do
+        //    {
+        //        string input = ConsoleIO.GetRequiredCoordinate(message);
+        //        if (input == "H")
+        //        {
+        //            for (int i = 0; i < Size; i++)
+        //            {
+
+        //                shipGrid[i] = data.ShipSymbol;
+        //            }
+        //            break;
+        //        }
+        //        else if (input == "V")
+        //        {
+
+        //        }
+
+        //    } while (true);
+        //}
+
     }
-    
+
 }

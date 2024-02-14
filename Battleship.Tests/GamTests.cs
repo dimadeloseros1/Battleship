@@ -9,17 +9,31 @@ namespace Battleship.Tests
     [TestFixture]
     public class GamTests
     {
-        public GameGridTests GridManager()
+        public GameGridTests TestManager()
         {
             return new GameGridTests();
         }
+
+        /// <summary>
+        /// Checks if the input is located in the exact location on the Grid
+        /// </summary>
         [Test]
         public void AddingItemToTheGrid()
         {
-            var manager = new GameGridTests();
+            var manager = TestManager();
             var result = manager.DisplayGrid("H3");
 
-            Assert.That(result, Is.EqualTo(manager.Grid[7, 2]));
+            Assert.That(result, Is.EqualTo(manager.Grid[7, 2]));    
+        }
+
+        
+        [Test]
+        public void PlaceVerticalOrHorizontal()
+        {
+            var manager = TestManager();
+            var placeSymbol = manager.DisplayGrid("H3");
+            //var result = manager.CheckHorizontalOrVertical("H6");
+
         }
     }
 }

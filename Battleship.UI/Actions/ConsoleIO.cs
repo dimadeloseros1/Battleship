@@ -12,6 +12,7 @@ namespace Battleship.UI.Actions
         /// <summary>
         /// Shows the board game to the user before the game starts
         /// </summary>
+        /// 
         public static void ShowGrid()
         {
             Console.WriteLine("  A B C D E F G H I J");
@@ -69,5 +70,7 @@ namespace Battleship.UI.Actions
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
         }
+
+        
     }
 }
