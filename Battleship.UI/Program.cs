@@ -1,5 +1,6 @@
 ﻿using Battleship.UI.Actions;
 using Battleship.UI.Enums;
+using Battleship.UI.Workflow;
 
-GameManager game = new GameManager();
-game.Run();
+App app = new App();
+app.AppTest();

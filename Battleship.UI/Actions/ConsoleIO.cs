@@ -10,9 +10,10 @@ namespace Battleship.UI.Actions
     public static class ConsoleIO
     {
         /// <summary>
-        /// Shows the board game to the user before the game starts
+        /// Shows the board game to the user before the game starts 
         /// </summary>
         /// 
+        public static string[,] Grid { get; set; } = new string[10, 10];
         public static void ShowGrid()
         {
             Console.WriteLine("  A B C D E F G H I J");
@@ -63,6 +64,31 @@ namespace Battleship.UI.Actions
                 return (ShipName)ships;
             }
             return ShipName.Submarine;
+        }
+
+        public static string CheckIfEmtpy(string input)
+        {
+            if (!string.IsNullOrEmpty(input))
+            {
+                return input;
+            }
+            else
+            {
+                return "-";
+            }
+        }
+        public static void DisplayGrid()
+        {
+            Coordinates cord = new Coordinates();
+
+            for (int i = 1; i <= cord.GameCoordinates; i++)
+            {
+                for (int j = 0; j < cord.Letters.Length; j++)
+                {
+                    Console.Write($"{CheckIfEmtpy(Grid[i - 1, j])}");
+                }
+                Console.WriteLine();
+            }
         }
 
         public static void AnyKey()

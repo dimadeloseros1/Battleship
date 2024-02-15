@@ -24,43 +24,69 @@ namespace Battleship.UI.Actions
 
         /// <summary>
         /// This method displays the current ship that the user has to input in the game board
+        /// Note ShipSymbol won't work so that method is just have to be another one with the type of string in order to pass it then later on to the grid 
         /// </summary>
         /// <param name="shipName">Enum of the current ship</param>
         public int DisplayShipInputMessage(ShipName shipName)
         {
-            int size;
             switch (shipName)
             {
                 case ShipName.AircraftCarrier:
                     Console.WriteLine("Ship to place: Aircraft Carrier | Size: 5");
-                    size = 5;
+                    Size = 5;
                     data.ShipSymbol = "A";
                     break;
                 case ShipName.Battleship:
                     Console.WriteLine("Ship to place: Battleship | Size: 4");
-                    size = 4;
+                    Size = 4;
                     data.ShipSymbol = "B";
                     break;
                 case ShipName.Cruiser:
                     Console.WriteLine("Ship to place: Cruiser | Size: 3");
-                    size = 3;
+                    Size = 3;
                     data.ShipSymbol = "C";
                     break;
                 case ShipName.Submarine:
                     Console.WriteLine("Ship to place: Submarine | Size: 3");
-                    size = 3;
+                    Size = 3;
                     data.ShipSymbol = "S";
                     break;
                 case ShipName.Destroyer:
                     Console.WriteLine("Ship to place: Destroyer | Size: 2");
-                    size = 2;
+                    Size = 2;
                     data.ShipSymbol = "D";
                     break;
                 default:
-                    size = 0;
+                    Size = 0;
                     break;
             }
-            return size;
+            return Size;
+        }
+
+        public string DisplayEachShipLetter(ShipName ship)
+        {
+            switch (ship)
+            {
+                case ShipName.AircraftCarrier:
+                    data.ShipSymbol = "A";
+                    break;
+                case ShipName.Battleship:
+                    data.ShipSymbol = "B";
+                    break;
+                case ShipName.Submarine:
+                    data.ShipSymbol = "S";
+                    break;
+                case ShipName.Cruiser:
+                    data.ShipSymbol = "C";
+                    break;
+                case ShipName.Destroyer:
+                    data.ShipSymbol = "D";
+                    break;
+                default:
+                    data.ShipSymbol = " ";
+                    break;
+            }
+            return data.ShipSymbol;
         }
 
 

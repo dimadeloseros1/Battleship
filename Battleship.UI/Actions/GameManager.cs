@@ -10,17 +10,11 @@ namespace Battleship.UI.Actions
     public class GameManager
     {
         
-
-        public void Run()
+        public void AppTest()
         {
-            Coordinates coordinate = new Coordinates();
-            string input = ConsoleIO.GetRequiredCoordinate("Enter the starting coordinate (ex: A5): ");
-            string inputs = coordinate.DisplayCoordinates(input);
-
-            coordinate.CheckHorizontalOrVertical(ShipName.AircraftCarrier, inputs);
-            coordinate.DisplayGrid();
             
         }
+        
     }
 
     //public void Number()
