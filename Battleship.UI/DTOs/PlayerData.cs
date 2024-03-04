@@ -10,5 +10,7 @@ namespace Battleship.UI.DTOs
     {
         public string UserName { get; set; }
         public string ShipSymbol { get; set; }
+        public int ColumnIndex { get; set; }
+        public int RowIndex { get; set; }
     }
 }

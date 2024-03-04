@@ -13,10 +13,12 @@ namespace Battleship.UI.Actions
     {
         public string[] Letters { get; set; } = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
         public int GameCoordinates { get; set; } = 10;
+
         public int Size { get; set; }
 
         Ship ships = new Ship();
-
+        PlayerData data = new PlayerData();
+        ShipName ship = ShipName.Battleship;
 
 
         public string DisplayCoordinates(string userInput, string[,] gameGrid)
@@ -28,7 +30,12 @@ namespace Battleship.UI.Actions
             {
                 for (int k = 0; k < Letters.Length; k++)
                 {
-                    if (columnIndex == k && rowIndex == i)
+                    if (columnIndex > k && rowIndex > GameCoordinates)
+                    {
+                        Console.WriteLine("Make sure that the input is either A to J and between 1 and 10");
+                        continue;
+                    }
+                    else if (columnIndex == k && rowIndex == i)
                     {
                         gameGrid[k, i - 1] = userInput;
                     }
@@ -38,19 +45,30 @@ namespace Battleship.UI.Actions
             return userInput;
         }
 
-        public string CheckHorizontalOrVertical(ShipName ship, string userInput, string[,] gameGrid)
+        public string CheckHorizontalOrVertical(string[,] gameGrid, string userInput, string input, int size)
         {
-            int size = ships.DisplayShipInputMessage(ship);
             string letter = ships.DisplayEachShipLetter(ship);
-            string input;
+
+            var column = data.ColumnIndex;
+            var row = data.RowIndex;
+
+            column = Array.IndexOf(Letters, userInput[0].ToString());
+            row = int.Parse(userInput.Substring(1)) - 1;
+
             do
             {
-                input = ConsoleIO.GetRequiredCoordinate("Please choose V or H: ");
                 if (input == "V")
                 {
                     for (int i = 0; i < size; i++)
                     {
-                        gameGrid[i, 0] = letter;
+                        if (row + i < GameCoordinates)
+                        {
+                            gameGrid[column, row + i] = letter;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Index is outside of the array");
+                        }
                     }
                     break;
                 }
@@ -58,7 +76,14 @@ namespace Battleship.UI.Actions
                 {
                     for (int i = 0; i < size; i++)
                     {
-                        gameGrid[0, i] = letter;
+                        if (column + i < Letters.Length)
+                        {
+                            gameGrid[column + i, row] = letter;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Index is outside of the array");
+                        }
                     }
                     break;
                 }
@@ -66,7 +91,5 @@ namespace Battleship.UI.Actions
             } while (true);
             return userInput;
         }
-        
-
     }
 }

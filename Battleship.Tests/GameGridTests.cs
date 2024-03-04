@@ -1,4 +1,5 @@
-﻿using Battleship.UI.DTOs;
+﻿using Battleship.UI.Actions;
+using Battleship.UI.DTOs;
 using Battleship.UI.Enums;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace Battleship.Tests
         public string[] Letters { get; set; } = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
         public int Coordinates { get; set; } = 10;
         public int Size { get; set; }
+        Ship ships = new Ship();
+        ShipName ship = ShipName.AircraftCarrier;
 
         public string DisplayGrid(string userInput)
         {
@@ -98,6 +101,45 @@ namespace Battleship.Tests
                 }
                 Console.WriteLine("Make sure that the input is at least one charachter long");
             } while (true);
+        }
+
+        public string CheckHorizontalOrVertical(string input, string[,] gameGrid, string userInput)
+        {
+            int size = ships.DisplayShipInputMessage(ship);
+            string letter = ships.DisplayEachShipLetter(ship);
+
+
+            int columnIndex = Array.IndexOf(Letters, userInput[0].ToString());
+            int rowIndex = int.Parse(userInput.Substring(1)) - 1;
+
+            do
+            {
+                input = ConsoleIO.GetRequiredCoordinate("Please choose V or H: ");
+                if (input == "V")
+                {
+                    for (int i = 0; i < size; i++)
+                    {
+                        if (rowIndex + i < Coordinates)
+                        {
+                            gameGrid[columnIndex, rowIndex + i] = letter;
+                        }
+                    }
+                    break;
+                }
+                else if (input == "H")
+                {
+                    for (int i = 0; i < size; i++)
+                    {
+                        if (columnIndex + i < Letters.Length)
+                        {
+                            gameGrid[columnIndex + i, rowIndex] = letter;
+                        }
+                    }
+                    break;
+                }
+                Console.WriteLine("Please choose either V or H");
+            } while (true);
+            return letter;
         }
     }
 }

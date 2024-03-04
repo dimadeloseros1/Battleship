@@ -18,7 +18,7 @@ namespace Battleship.UI.Actions
         PlayerData data = new PlayerData();
         public string[] ShipArray { get; set; } = new string[17];
 
-        public int Size { get; set; }
+        public int Size { get; set; } 
 
 
 
@@ -34,27 +34,22 @@ namespace Battleship.UI.Actions
                 case ShipName.AircraftCarrier:
                     Console.WriteLine("Ship to place: Aircraft Carrier | Size: 5");
                     Size = 5;
-                    data.ShipSymbol = "A";
                     break;
                 case ShipName.Battleship:
                     Console.WriteLine("Ship to place: Battleship | Size: 4");
                     Size = 4;
-                    data.ShipSymbol = "B";
                     break;
                 case ShipName.Cruiser:
                     Console.WriteLine("Ship to place: Cruiser | Size: 3");
                     Size = 3;
-                    data.ShipSymbol = "C";
                     break;
                 case ShipName.Submarine:
                     Console.WriteLine("Ship to place: Submarine | Size: 3");
                     Size = 3;
-                    data.ShipSymbol = "S";
                     break;
                 case ShipName.Destroyer:
                     Console.WriteLine("Ship to place: Destroyer | Size: 2");
                     Size = 2;
-                    data.ShipSymbol = "D";
                     break;
                 default:
                     Size = 0;

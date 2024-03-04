@@ -37,7 +37,7 @@ namespace Battleship.UI.Actions
         {
             do
             {
-                Console.WriteLine(message);
+                Console.Write(message);
                 string input = Console.ReadLine().Trim().ToUpper();
 
                 // Check if the input is in the correct format (e.g., A7)
@@ -52,12 +52,10 @@ namespace Battleship.UI.Actions
 
         
 
-
-
         /// <summary>
         /// This method is probably useless, REMINDER
         /// </summary>
-        public static ShipName DisplayShipPlacementMessage()
+        public static ShipName LoopThroughShipNames()
         {
             foreach (var ships in Enum.GetValues(typeof(ShipName)))
             {
@@ -85,18 +83,65 @@ namespace Battleship.UI.Actions
             {
                 for (int j = 0; j < cord.Letters.Length; j++)
                 {
-                    Console.Write($"{CheckIfEmtpy(Grid[i - 1, j])}");
+                    Console.Write($"{CheckIfEmtpy(Grid[j, i - 1]) + " "}");
                 }
                 Console.WriteLine();
             }
         }
+
+        public static void ShipMessage(ShipResult result)
+        {
+            switch (result)
+            {
+                case ShipResult.InvalidOffGrid:
+                    Console.WriteLine("Please place the ship inside the grid");
+                    break;
+                case ShipResult.InvalidOverlap:
+                    Console.WriteLine("The ship currently overlaps");
+                    break;
+                case ShipResult.Placed:
+                    Console.WriteLine("The ship has been placed");
+                    break;
+                case ShipResult.Hit:
+                    Console.WriteLine("Something has been hit!");
+                    break;
+                case ShipResult.Miss:
+                    Console.WriteLine("Miss!");
+                    break;
+                case ShipResult.Sunk:
+                    Console.WriteLine("Boom! The ship has been sunk!");
+                    break;
+            }
+        }
+
+        public static void ShipPlacementMessage(ShipName result)
+        {
+            switch (result)
+            {
+                case ShipName.AircraftCarrier:
+                    Console.WriteLine("You have plaed your Aircraft-Carried");
+                    break;
+                case ShipName.Battleship:
+                    Console.WriteLine("You have plaed your Battleship");
+                    break;
+                case ShipName.Submarine:
+                    Console.WriteLine("You have plaed your Submarine");
+                    break;
+                case ShipName.Cruiser:
+                    Console.WriteLine("You have plaed your Cruiser");
+                    break;
+                case ShipName.Destroyer:
+                    Console.WriteLine("You have plaed your Destroyer");
+                    break;
+            }
+        }
+
+
 
         public static void AnyKey()
         {
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
         }
-
-        
     }
 }
