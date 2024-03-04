@@ -39,6 +39,12 @@ namespace Battleship.UI.Actions
             return ShipResult.Placed;
         }
 
+        /// <summary>
+        /// This method is incharge of checking whether the input is inside the grid
+        /// NOTE: This method has to be modified in order to correctly check if the input is inside of the grid or not
+        /// </summary>
+        /// <param name="rowIndex"></param>
+        /// <returns></returns>
         public bool InvalidOutOfGrid(int rowIndex)
         {
             return rowIndex >= 0 && rowIndex < cord.GameCoordinates;

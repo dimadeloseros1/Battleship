@@ -25,15 +25,15 @@ namespace Battleship.UI.Workflow
                     string[,] grid = ConsoleIO.Grid;
                     Coordinates coordinate = new Coordinates();
                     int size = ships.DisplayShipInputMessage(shipsName);
+                    string letter = ships.DisplayEachShipLetter(shipsName);
                     var input = ConsoleIO.GetRequiredCoordinate("Enter the starting coordinate (ex: A5): ");
                     //var inputs = coordinate.DisplayCoordinates(input, grid);
                     string verOrHor = ConsoleIO.GetRequiredCoordinate("Please choose either V or H: ");
 
 
-
                     // Idea to add a fourth paramether to CheckHorizontalOrVertical method
                     //var methodCoordinate = coordinate.DisplayCoordinates(input, grid);
-                    var methodCoordinate = coordinate.CheckHorizontalOrVertical(grid, input, verOrHor, size);
+                    var methodCoordinate = coordinate.CheckHorizontalOrVertical(grid, input, verOrHor, size, letter);
                     var result = manager.AppTest(methodCoordinate);
 
                     if (result == ShipResult.InvalidOffGrid || result == ShipResult.InvalidOverlap)

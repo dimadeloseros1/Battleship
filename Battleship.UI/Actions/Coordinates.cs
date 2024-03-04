@@ -18,7 +18,6 @@ namespace Battleship.UI.Actions
 
         Ship ships = new Ship();
         PlayerData data = new PlayerData();
-        ShipName ship = ShipName.Battleship;
 
 
         public string DisplayCoordinates(string userInput, string[,] gameGrid)
@@ -45,15 +44,14 @@ namespace Battleship.UI.Actions
             return userInput;
         }
 
-        public string CheckHorizontalOrVertical(string[,] gameGrid, string userInput, string input, int size)
+        public string CheckHorizontalOrVertical(string[,] gameGrid, string userInput, string input, int size, string letter)
         {
-            string letter = ships.DisplayEachShipLetter(ship);
 
             var column = data.ColumnIndex;
             var row = data.RowIndex;
 
             column = Array.IndexOf(Letters, userInput[0].ToString());
-            row = int.Parse(userInput.Substring(1)) - 1;
+            row = int.Parse(userInput.Substring(1));
 
             do
             {
